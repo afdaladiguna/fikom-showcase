@@ -1,5 +1,8 @@
-/* eslint-disable import/order */
-/* eslint-disable import/no-extraneous-dependencies */
+/* eslint-disable global-require */
+if (process.env.NODE_ENV !== 'production') {
+  require('dotenv').config();
+}
+
 const express = require('express');
 const path = require('path');
 const mongoose = require('mongoose');

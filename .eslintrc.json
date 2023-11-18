@@ -17,6 +17,8 @@
     "comma-dangle": "off",
     "no-unused-vars": "off",
     "no-param-reassign": "off",
-    "consistent-return": "off"
+    "consistent-return": "off",
+    "import/no-extraneous-dependencies": "off",
+    "import/order": "off"
   }
 }
