@@ -1,7 +1,7 @@
 <% layout('layouts/boilerplate.ejs') %>
     <div class="row">
         <h1 class="text-center">New Campground</h1>
-        <div class="col-6 offset-3">
+        <div class="col-md-6 offset-md-3">
             <form action="/campgrounds" method="POST" class="needs-validation" novalidate enctype="multipart/form-data">
                 <div class="mb-3">
                     <label class="form-label" for="title">Title</label>
@@ -17,15 +17,6 @@
                         Please provide a camp location.
                     </div>
                 </div>
-
-                <!-- <input type="file" name="image" id="" multiple> -->
-                <!-- <div class="mb-3">
-                    <label class="form-label" for="image">Image URL</label>
-                    <input class="form-control" type="text" id="image" name="campground[image]" required>
-                    <div class="invalid-feedback">
-                        Please provide a camp image.
-                    </div>
-                </div> -->
                 <div class="mb-3">
                     <label class="form-label" for="price">Campground Price</label>
                     <div class="input-group">
@@ -36,7 +27,6 @@
                             Please provide a camp price.
                         </div>
                     </div>
-
                 </div>
                 <div class="mb-3">
                     <label class="form-label" for="description">Description</label>
