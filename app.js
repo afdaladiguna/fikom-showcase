@@ -21,9 +21,12 @@ const User = require('./models/user');
 const userRoutes = require('./routes/users');
 const campgroundRoutes = require('./routes/campgrounds');
 const reviewRoutes = require('./routes/reviews');
-const dbUrl = process.env.DB_URL;
+// const dbUrl = process.env.DB_URL;
 
-mongoose.connect(dbUrl);
+mongoose.set('strictQuery', true);
+
+// mongoose.connect(dbUrl);
+mongoose.connect("mongodb://localhost:27017/fikom-showcase");
 
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
@@ -43,7 +46,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(mongoSanitize());
 
 const store = MongoStore.create({
-  mongoUrl: dbUrl,
+  // mongoUrl: dbUrl,
+  mongoUrl: 'mongodb://localhost:27017/fikom-showcase',
   touchAfter: 24 * 60 * 60,
   crypto: {
     secret: 'thisshouldbeabettersecret!',

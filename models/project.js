@@ -14,13 +14,13 @@ ImageSchema.virtual('thumbnail').get(function () {
 
 const opts = { toJSON: { virtuals: true } };
 
-const CampgroundSchema = new Schema(
+const ProjectSchema = new Schema(
   {
     title: String,
-    images: [ImageSchema],
-    price: Number,
     description: String,
-    location: String,
+    repository: String,
+    category: String,
+    images: [ImageSchema],
     author: {
       type: Schema.Types.ObjectId,
       ref: 'User',
@@ -34,6 +34,8 @@ const CampgroundSchema = new Schema(
   },
   opts
 );
+
+// 
 
 CampgroundSchema.virtual('properties.popUpMarkup').get(function () {
   return `<a href="/campgrounds/${this._id}">${this.title}</a>`;
