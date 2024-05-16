@@ -19,7 +19,7 @@ const LocalStrategy = require('passport-local');
 const User = require('./models/user');
 
 const userRoutes = require('./routes/users');
-const campgroundRoutes = require('./routes/campgrounds');
+const projectRoutes = require('./routes/projects');
 const reviewRoutes = require('./routes/reviews');
 // const dbUrl = process.env.DB_URL;
 
@@ -99,6 +99,7 @@ const connectSrcUrls = [
   'https://events.mapbox.com/',
 ];
 const fontSrcUrls = [];
+
 app.use(
   helmet.contentSecurityPolicy({
     directives: {
@@ -135,8 +136,8 @@ app.use((req, res, next) => {
 });
 
 app.use('/', userRoutes);
-app.use('/campgrounds', campgroundRoutes);
-app.use('/campgrounds/:id/reviews', reviewRoutes);
+app.use('/projects', projectRoutes);
+app.use('/projects/:id/reviews', reviewRoutes);
 
 app.get('/', (req, res) => {
   res.render('home');

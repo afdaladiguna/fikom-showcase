@@ -3,6 +3,7 @@ const router = express.Router({ mergeParams: true });
 
 const { validateReview, isLoggedIn, isReviewAuthor } = require('../middleware');
 const Campground = require('../models/campground');
+const Project = require('../models/project')
 const Review = require('../models/review');
 const reviews = require('../controllers/reviews');
 

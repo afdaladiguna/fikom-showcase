@@ -37,11 +37,11 @@ const ProjectSchema = new Schema(
 
 // 
 
-CampgroundSchema.virtual('properties.popUpMarkup').get(function () {
-  return `<a href="/campgrounds/${this._id}">${this.title}</a>`;
+ProjectSchema.virtual('properties.popUpMarkup').get(function () {
+  return `<a href="/projects/${this._id}">${this.title}</a>`;
 });
 
-CampgroundSchema.post('findOneAndDelete', async (doc) => {
+ProjectSchema.post('findOneAndDelete', async (doc) => {
   if (doc) {
     // delete all reviews where their ID field is in
     // the 'doc' or in the deleted campground
@@ -53,4 +53,4 @@ CampgroundSchema.post('findOneAndDelete', async (doc) => {
   }
 });
 
-module.exports = mongoose.model('Campground', CampgroundSchema);
+module.exports = mongoose.model('Project', ProjectSchema);
