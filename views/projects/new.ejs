@@ -1,43 +1,31 @@
 <% layout('layouts/boilerplate.ejs') %>
     <div class="row">
-        <h1 class="text-center">New Project</h1>
-        <div class="col-md-6 offset-md-3 mb-5">
+        <h1 class="text-center">Proyek Baru</h1>
+        <div class="col-md-6 offset-md-3">
             <form action="/projects" method="POST" class="needs-validation" novalidate enctype="multipart/form-data">
                 <div class="mb-3">
-                    <label class="form-label" for="title">Title</label>
+                    <label class="form-label" for="title">Judul Proyek</label>
                     <input class="form-control" type="text" id="title" name="project[title]" required>
-                    <div class="invalid-feedback">
-                        Please provide a project title.
-                    </div>
                 </div>
                 <div class="mb-3">
-                    <label class="form-label" for="description">description</label>
-                    <textarea class="form-control" type="text" id="description" name="project[description]"
+                    <label class="form-label" for="description">Deskripsi</label>
+                    <textarea class="form-control" type="text" id="description" rows="5" name="project[description]"
                         required></textarea>
-                    <div class="invalid-feedback">
-                        Please provide a project description.
-                    </div>
                 </div>
                 <div class="mb-3">
-                    <label class="form-label" for="repository">repository</label>
+                    <label class="form-label" for="repository">Repository</label>
                     <input class="form-control" type="text" id="repository" name="project[repository]" required>
-                    <div class="invalid-feedback">
-                        Please provide a project repository.
-                    </div>
                 </div>
                 <div class="mb-3">
-                    <label class="form-label" for="category">category</label>
+                    <label class="form-label" for="category">Kategori</label>
                     <input class="form-control" type="text" id="category" name="project[category]" required>
-                    <div class="invalid-feedback">
-                        Please provide a project category.
-                    </div>
                 </div>
                 <div class="mb-3">
-                    <label for="image" class="form-label">Choose Image(s)</label>
+                    <label for="image" class="form-label">Upload Gambar</label>
                     <input class="form-control" type="file" id="image" name="image" multiple>
                 </div>
-                <div class="mb-3">
-                    <button class="btn btn-success">Add project</button>
+                <div class="mb-3 py-2">
+                    <button class="btn btn-success">Submit</button>
                 </div>
             </form>
         </div>

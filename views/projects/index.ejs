@@ -26,8 +26,7 @@
                                     </p>
                                 </div>
                                 <div class="card-footer py-3">
-                                    <a href="/projects/<%= project._id %>" class="btn btn-sm btn-secondary">Lihat <%=
-                                            project.title %></a>
+                                    <a href="/projects/<%= project._id %>" class="btn btn-sm btn-warning">Lihat <%= truncateDescription(project.title, 10) %> </a>
                                 </div>
                 </div>
             </div>

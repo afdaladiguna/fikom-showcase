@@ -29,12 +29,12 @@
 
             <div class="card mb-3">
                 <div class="card-body">
-                    <p class="mb-2"><span class="badge bg-info">
-                            <%= project.category %>
-                        </span></p>
                     <h5 class="card-title">
                         <%= project.title %>
                     </h5>
+                    <p class="mb-2"><span class="badge bg-info">
+                            <%= project.category %>
+                        </span></p>
                     <p class="card-text">
                         <%= project.description %>
                     </p>
@@ -44,7 +44,7 @@
                         repository: <%= project.repository %>
                     </li>
                     <li class="list-group-item">
-                        <%= project.author.name %><br>
+                        <%= project.author.name %> / <%= project.author.nim %><br>
                         <%= project.author.faculty %><br>
                         <%= project.author.department %> <%= project.author.batch %>
                     </li>
