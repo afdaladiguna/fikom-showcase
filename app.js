@@ -21,12 +21,12 @@ const User = require('./models/user');
 const userRoutes = require('./routes/users');
 const projectRoutes = require('./routes/projects');
 const reviewRoutes = require('./routes/reviews');
-// const dbUrl = process.env.DB_URL;
+const dbUrl = process.env.DB_URL;
 
 mongoose.set('strictQuery', true);
 
-// mongoose.connect(dbUrl);
-mongoose.connect("mongodb://localhost:27017/fikom-showcase");
+mongoose.connect(dbUrl);
+// mongoose.connect("mongodb://localhost:27017/fikom-showcase");
 
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));

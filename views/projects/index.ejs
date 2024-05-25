@@ -19,7 +19,7 @@
                                             <%= project.category %>
                                         </span></p>
                                     <h5 class="card-title mt-1">
-                                        <%= project.title %>
+                                        <%= truncateDescription(project.title, 10) %>
                                     </h5>
                                     <p class="card-text">
                                         <%= truncateDescription(project.description, 70) %>
